@@ -1,20 +1,12 @@
-import { useRef, useState } from 'react';
-
-import Phaser from 'phaser';
-import { PhaserGame } from './game/PhaserGame';
-
-function App ()
-{
-    
-        
-    
-
-    
+import React from "react";
+import GameComponent from "./GameComponent";
+function App() {
     return (
-        <div id="app">
-       
+        <div>
+            <h1>phaser game in react</h1>
+            <GameComponent/>
         </div>
     )
-
 }
-export default App
+export default App;
+
