@@ -23,13 +23,24 @@ class PhaserScene extends Phaser.Scene {
     // Create additional layers
     const treelayer = map.createLayer('tree', [tileset1, tileset2, tileset3], 0, 0);
     const houselayer = map.createLayer('house', [tileset1, tileset2, tileset3], 0, 0);
-    
 
-    // Set collisions for the new layers if needed
+    // Set collisions for the layers
     groundLayer.setCollisionByProperty({ collides: true });
     treelayer.setCollisionByProperty({ collides: true });
     houselayer.setCollisionByProperty({ collides: true });
-    const objectLayer = map.getObjectLayer('sujal'); // Update with your layer name if needed
+
+    // Example: Add a player sprite and set collider with layers
+    this.player = this.physics.add.sprite(50, 50, 'playerSprite'); // Update position and sprite
+    this.physics.add.collider(this.player, groundLayer);
+    this.physics.add.collider(this.player, treelayer);
+    this.physics.add.collider(this.player, houselayer);
+    
+
+    // Set collisions for the new layers if needed
+    // groundLayer.setCollisionByProperty({ collides: true });
+    // treelayer.setCollisionByProperty({ collides: true });
+    // houselayer.setCollisionByProperty({ collides: true });
+    // const objectLayer = map.getObjectLayer('sujal'); // Update with your layer name if needed
 
     // Example: Set collisions
 
